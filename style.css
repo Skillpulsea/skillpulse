@@ -1888,7 +1888,7 @@ button:focus-visible {
 
 @media screen and (max-width: 760px) {
   .site-header .nav-links.is-open a[href="#contact"] {
-    color: #20231f !important;
+    color: #a5e847 !important;
     -webkit-text-fill-color: #20231f !important;
   }
 }
