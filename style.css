@@ -1878,3 +1878,19 @@ button:focus-visible {
   }
 }
 
+/* Make Let's Connect text visible */
+.site-header .nav-links a[href="#contact"] {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@media screen and (max-width: 760px) {
+  .site-header .nav-links.is-open a[href="#contact"] {
+    color: #20231f !important;
+    -webkit-text-fill-color: #20231f !important;
+  }
+}
+
+
