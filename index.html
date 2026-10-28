@@ -1,548 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Skill Pulse - Hands-on practice in Coding, STEM, Electronics, Robotics, App Development and AI.">
-  <meta name="theme-color" content="#f8f7f2">
-
-  <title>Skill Pulse | Hands-on Practice</title>
+  <meta name="description" content=" Skill Pulse - Hands on Practice in Coding, STEM, Robotics and AI.">
+  <title>Skill Pulse   |   hy Hands  on  Practice</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css">
-
-  <!-- Additional mobile responsive styles -->
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      width: 100%;
-      scroll-behavior: smooth;
-      overflow-x: clip;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      width: 100%;
-      margin: 0;
-      overflow-x: clip;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    .container {
-      width: min(100% - 40px, 1200px);
-      margin-inline: auto;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: #f8f7f2;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      position: relative;
-    }
-
-    .brand img {
-      display: block;
-      width: 65px;
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 27px;
-      line-height: 1;
-      padding: 9px 12px;
-      cursor: pointer;
-      border: 0;
-      border-radius: 8px;
-      background: transparent;
-      color: #202b39;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .hero-grid,
-    .approach-grid,
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      align-items: center;
-      gap: 40px;
-    }
-
-    .program-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .program-card,
-    .project-card,
-    .visual-card,
-    .contact-form {
-      min-width: 0;
-      max-width: 100%;
-    }
-
-    .project-photo {
-      display: block;
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-
-    input,
-    select,
-    textarea,
-    button {
-      font: inherit;
-    }
-
-    input,
-    select,
-    textarea {
-      max-width: 100%;
-    }
-
-    .form-status {
-      overflow-wrap: anywhere;
-    }
-
-    /* Tablets and phones */
-    @media (max-width: 900px) {
-      .container {
-        width: min(100% - 32px, 720px);
-      }
-
-      .nav {
-        flex-wrap: wrap;
-        gap: 10px;
-        padding-block: 10px;
-      }
-
-      .nav > .brand:nth-of-type(2) {
-        flex: 1;
-        min-width: 0;
-      }
-
-      .brand-tagline {
-        font-size: 12px;
-      }
-
-      .menu-toggle {
-        display: block;
-        flex-shrink: 0;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        width: 100%;
-        padding: 12px;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        background: #ffffff;
-        border-radius: 0 0 14px 14px;
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-links a {
-        display: block;
-        width: 100%;
-        padding: 13px 12px;
-        text-align: left;
-      }
-
-      .hero-grid,
-      .approach-grid,
-      .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 30px;
-      }
-
-      .hero-copy {
-        text-align: center;
-      }
-
-      .hero-actions {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .hero-proof {
-        justify-content: center;
-      }
-
-      .hero-visual {
-        width: 100%;
-        max-width: 520px;
-        margin-inline: auto;
-      }
-
-      .program-grid,
-      .project-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-      }
-
-      .trust-inner {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px 20px;
-        text-align: center;
-      }
-
-      .school-cta-inner {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 22px;
-      }
-
-      .footer-main {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 22px;
-      }
-    }
-
-    /* Small phones */
-    @media (max-width: 600px) {
-      html {
-        scroll-padding-top: 75px;
-      }
-
-      .container {
-        width: calc(100% - 30px);
-      }
-
-      .announcement {
-        padding: 10px 12px;
-        text-align: center;
-        font-size: 12px;
-        line-height: 1.6;
-      }
-
-      .announcement a {
-        white-space: normal;
-      }
-
-      .nav {
-        gap: 8px;
-      }
-
-      .brand img {
-        width: 45px;
-      }
-
-      .brand-name {
-        font-size: 17px;
-      }
-
-      .brand-name small {
-        display: block;
-        font-size: 9px;
-        letter-spacing: 1px;
-      }
-
-      .brand-tagline {
-        display: none;
-      }
-
-      .menu-toggle {
-        font-size: 25px;
-        padding: 8px;
-      }
-
-      .section {
-        padding: 42px 0;
-      }
-
-      .hero {
-        padding-block: 38px;
-      }
-
-      .hero h1 {
-        font-size: clamp(30px, 8vw, 42px);
-        line-height: 1.2;
-        overflow-wrap: anywhere;
-      }
-
-      h2 {
-        font-size: clamp(25px, 6.5vw, 34px);
-        line-height: 1.25;
-        overflow-wrap: anywhere;
-      }
-
-      h3 {
-        font-size: 19px;
-        line-height: 1.4;
-      }
-
-      p {
-        font-size: 15px;
-        line-height: 1.7;
-      }
-
-      .hero-lead,
-      .section-description {
-        font-size: 15px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .hero-actions .button,
-      .approach-grid .button,
-      .school-cta .button {
-        width: 100%;
-        text-align: center;
-        justify-content: center;
-      }
-
-      .hero-proof {
-        text-align: left;
-        align-items: center;
-      }
-
-      .visual-card {
-        width: 100%;
-      }
-
-      .floating-note {
-        max-width: 80%;
-      }
-
-      .trust-strip {
-        padding: 20px 0;
-      }
-
-      .trust-inner {
-        gap: 12px;
-      }
-
-      .trust-inner span {
-        font-size: 10px;
-      }
-
-      .section-heading {
-        display: block;
-      }
-
-      .program-grid,
-      .project-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 20px;
-      }
-
-      .program-card,
-      .project-card {
-        width: 100%;
-      }
-
-      .project-photo {
-        height: 210px;
-      }
-
-      .tag-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .approach-grid {
-        gap: 28px;
-      }
-
-      .step-item {
-        gap: 14px;
-      }
-
-      .school-cta {
-        padding-block: 35px;
-      }
-
-      .contact-grid {
-        gap: 28px;
-      }
-
-      .contact-detail {
-        min-width: 0;
-        overflow-wrap: anywhere;
-      }
-
-      .contact-detail strong,
-      .contact-detail span {
-        overflow-wrap: anywhere;
-      }
-
-      .contact-form {
-        width: 100%;
-        padding: 22px 16px;
-      }
-
-      .form-row {
-        width: 100%;
-      }
-
-      .form-row label {
-        display: block;
-        margin-bottom: 7px;
-      }
-
-      .form-row input,
-      .form-row select,
-      .form-row textarea {
-        display: block;
-        width: 100%;
-        min-width: 0;
-        padding: 12px;
-        font-size: 16px;
-      }
-
-      .form-submit {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .form-disclaimer {
-        font-size: 12px;
-      }
-
-      .footer-main {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .footer-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px 18px;
-      }
-
-      .footer-bottom {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        text-align: center;
-      }
-    }
-
-    /* Very narrow phones */
-    @media (max-width: 360px) {
-      .container {
-        width: calc(100% - 24px);
-      }
-
-      .brand img {
-        width: 38px;
-      }
-
-      .brand-name {
-        font-size: 15px;
-      }
-
-      .hero h1 {
-        font-size: 29px;
-      }
-
-      .floating-note {
-        max-width: 90%;
-      }
-    }
-
-    /* Respect reduced-motion preferences */
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
 </head>
-
 <body>
 
-  <!-- Announcement -->
   <div class="announcement">
     Learning by doing | Skills for tomorrow
-    <a href="#programs">Explore programs ↗</a>
-  </div>
+    <a href="#programs">   |  Explore programs ↗</a>
+    </div>
 
-  <!-- Header -->
+
   <header class="site-header">
-    <nav class="nav container" aria-label="Main navigation">
-
-      <a href="#home" class="brand" aria-label="Skill Pulse home">
-        <img src="images/logo.png" alt="Skill Pulse Logo">
+    <nav class="nav container">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" 
+         alt="Skill Pulse Logo">
       </a>
 
       <a class="brand" href="#home">
         <span class="brand-name">
-          Skill Pulse
-          <small>HANDS-ON PRACTICE</small>
-          <span class="brand-tagline">
-            Learn by Doing, Discover by Experimenting.
-          </span>
+          Skill  pulse <span> 
+          <small>  HANDS  ON  PRACTICE</small></span>
+          <p class="brand-tagline">
+            Learn by Doing, Discover  by  Experimenting.
+          </p>
         </span>
       </a>
+  
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-controls="navLinks"
-        aria-expanded="false">
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Toggle navigation" aria-expanded="false">
         ☰
       </button>
 
@@ -550,11 +46,10 @@
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#programs">Programs</a>
-        <a href="#approach">Our Approach</a>
+        <a href="#approach">  Our Approach</a>
         <a href="#projects">Projects</a>
         <a class="nav-cta" href="#contact">Let's Connect ↗</a>
       </div>
-
     </nav>
   </header>
 
@@ -563,13 +58,12 @@
     <!-- Hero -->
     <section class="hero section" id="home">
       <div class="container hero-grid">
-
         <div class="hero-copy">
           <div class="eyebrow">✳ FUTURE-READY LEARNING ✳</div>
 
           <h1>
-            Big ideas start<br>
-            with <span class="highlight">hands-on</span><br>
+            Big  ideas  start<br>
+            with  <span class="highlight"> hands-on </span><br>
             learning.
           </h1>
 
@@ -651,7 +145,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -693,8 +186,7 @@
         <div class="section-kicker">02 / WHAT WE TEACH</div>
 
         <div class="section-heading">
-          <h2>
-            Explore. Experiment.<br>
+          <h2>Explore. Experiment.<br>
             <span class="serif-accent">Excel.</span>
           </h2>
           <p>
@@ -706,7 +198,9 @@
         <div class="program-grid">
 
           <article class="program-card program-lilac">
-            <div class="program-art"><span class="art-icon">&lt;/&gt;</span></div>
+            <div class="program-art">
+              <span class="art-icon">&lt;/&gt;</span>
+            </div>
             <div class="program-info">
               <span class="program-number">01 / PROGRAM</span>
               <h3>Coding</h3>
@@ -715,12 +209,16 @@
               <div class="tag-row">
                 <span>Block Coding</span><span>Python</span><span>JavaScript</span>
               </div>
-              <a href="#contact" class="card-link" data-program="Coding">Explore program ↗</a>
+              <a href="#contact" class="card-link" data-program="Coding">
+                Explore program ↗
+              </a>
             </div>
           </article>
 
           <article class="program-card program-peach">
-            <div class="program-art"><span class="art-icon">✳</span></div>
+            <div class="program-art">
+              <span class="art-icon">✳</span>
+            </div>
             <div class="program-info">
               <span class="program-number">02 / PROGRAM</span>
               <h3>STEM &amp; Design Thinking</h3>
@@ -729,12 +227,15 @@
               <div class="tag-row">
                 <span>Problem Solving</span><span>Prototyping</span>
               </div>
-              <a href="#contact" class="card-link" data-program="STEM &amp; Design Thinking">Explore program ↗</a>
+              <a href="#contact" class="card-link"
+                data-program="STEM &amp; Design Thinking">Explore program ↗</a>
             </div>
           </article>
 
           <article class="program-card program-mint">
-            <div class="program-art"><span class="art-icon">⚙</span></div>
+            <div class="program-art">
+              <span class="art-icon">⚙</span>
+            </div>
             <div class="program-info">
               <span class="program-number">03 / PROGRAM</span>
               <h3>Mechanics</h3>
@@ -743,12 +244,16 @@
               <div class="tag-row">
                 <span>PlayDynamEek</span><span>Motion</span>
               </div>
-              <a href="#contact" class="card-link" data-program="Mechanics">Explore program ↗</a>
+              <a href="#contact" class="card-link" data-program="Mechanics">
+                Explore program ↗
+              </a>
             </div>
           </article>
 
           <article class="program-card program-blue">
-            <div class="program-art"><span class="art-icon">ϟ</span></div>
+            <div class="program-art">
+              <span class="art-icon">ϟ</span>
+            </div>
             <div class="program-info">
               <span class="program-number">04 / PROGRAM</span>
               <h3>Electronics</h3>
@@ -757,12 +262,16 @@
               <div class="tag-row">
                 <span>Circuits</span><span>Sensors</span><span>Arduino</span>
               </div>
-              <a href="#contact" class="card-link" data-program="Electronics">Explore program ↗</a>
+              <a href="#contact" class="card-link" data-program="Electronics">
+                Explore program ↗
+              </a>
             </div>
           </article>
 
           <article class="program-card program-yellow">
-            <div class="program-art"><span class="art-icon">▣</span></div>
+            <div class="program-art">
+              <span class="art-icon">▣</span>
+            </div>
             <div class="program-info">
               <span class="program-number">05 / PROGRAM</span>
               <h3>App Development</h3>
@@ -771,12 +280,16 @@
               <div class="tag-row">
                 <span>App Design</span><span>Logic</span>
               </div>
-              <a href="#contact" class="card-link" data-program="App Development">Explore program ↗</a>
+              <a href="#contact" class="card-link" data-program="App Development">
+                Explore program ↗
+              </a>
             </div>
           </article>
 
           <article class="program-card program-lilac">
-            <div class="program-art"><span class="art-icon">🤖</span></div>
+            <div class="program-art">
+              <span class="art-icon">🤖</span>
+            </div>
             <div class="program-info">
               <span class="program-number">06 / PROGRAM</span>
               <h3>Robotics</h3>
@@ -785,12 +298,16 @@
               <div class="tag-row">
                 <span>Build</span><span>Program</span><span>Test</span>
               </div>
-              <a href="#contact" class="card-link" data-program="Robotics">Explore program ↗</a>
+              <a href="#contact" class="card-link" data-program="Robotics">
+                Explore program ↗
+              </a>
             </div>
           </article>
 
           <article class="program-card program-dark">
-            <div class="program-art"><span class="art-icon">✧ AI</span></div>
+            <div class="program-art">
+              <span class="art-icon">✧ AI</span>
+            </div>
             <div class="program-info">
               <span class="program-number">07 / PROGRAM</span>
               <h3>Artificial Intelligence</h3>
@@ -799,7 +316,8 @@
               <div class="tag-row">
                 <span>AI Concepts</span><span>Real-world Uses</span>
               </div>
-              <a href="#contact" class="card-link" data-program="Artificial Intelligence">Explore program ↗</a>
+              <a href="#contact" class="card-link"
+                data-program="Artificial Intelligence">Explore program ↗</a>
             </div>
           </article>
 
@@ -810,11 +328,9 @@
     <!-- Approach -->
     <section class="section approach-section" id="approach">
       <div class="container approach-grid">
-
         <div>
           <div class="section-kicker">03 / HOW WE LEARN</div>
-          <h2>
-            Less watching.<br>
+          <h2>Less watching.<br>
             <span class="serif-accent">More doing.</span>
           </h2>
           <p class="section-description">
@@ -856,115 +372,196 @@
             </div>
           </article>
         </div>
-
       </div>
     </section>
+<!-- Projects Section -->
+<section class="section projects-section" id="projects">
+  <div class="container">
 
-    <!-- Projects -->
-    <section class="section projects-section" id="projects">
-      <div class="container">
+    <div class="section-kicker">04 / LEARNING IN ACTION</div>
 
-        <div class="section-kicker">04 / LEARNING IN ACTION</div>
+    <div class="section-heading">
+      <h2>
+        Real projects.<br>
+        <span class="serif-accent">Real possibilities.</span>
+      </h2>
+      <p>
+        Explore what students can build with creativity,
+        technology and hands-on learning.
+      </p>
+    </div>
 
-        <div class="section-heading">
-          <h2>
-            Real projects.<br>
-            <span class="serif-accent">Real possibilities.</span>
-          </h2>
+    <div class="project-grid">
+
+      <!-- 1. Robotics -->
+      <article class="project-card">
+        <img
+          class="project-photo"
+          src="images/robotics-project.jpeg"
+          alt="Obstacle avoiding robot car"
+          loading="lazy"
+        >
+        <div class="project-caption">
+          <span class="project-category">01 / ROBOTICS</span>
+          <h3>Obstacle-Avoiding Robot</h3>
           <p>
-            Explore what students can build with creativity,
-            technology and hands-on learning.
+            <strong>Project:</strong> Build a robot car that detects
+            obstacles and changes direction automatically.
+          </p>
+          <p>
+            <strong>Real-world use:</strong> Introduces autonomous
+            robots used in warehouses and industries.
           </p>
         </div>
+      </article>
 
-        <div class="project-grid">
-
-          <article class="project-card">
-            <img class="project-photo" src="images/robotics-project.jpeg" alt="Obstacle avoiding robot car" loading="lazy">
-            <div class="project-caption">
-              <span class="project-category">01 / ROBOTICS</span>
-              <h3>Obstacle-Avoiding Robot</h3>
-              <p><strong>Project:</strong> Build a robot car that detects obstacles and changes direction automatically.</p>
-              <p><strong>Real-world use:</strong> Introduces autonomous robots used in warehouses and industries.</p>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <img class="project-photo" src="images/maze1.jpg" alt="Student-created coding game" loading="lazy">
-            <div class="project-caption">
-              <span class="project-category">02 / CODING</span>
-              <h3>Interactive Maze Game</h3>
-              <p><strong>Project:</strong> Create a game using movement, conditions, events and scoring.</p>
-              <p><strong>Real-world use:</strong> Builds logical thinking and introduces game development.</p>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <img class="project-photo" src="images/light.jpeg" alt="Automatic light circuit with a light sensor" loading="lazy">
-            <div class="project-caption">
-              <span class="project-category">03 / ELECTRONICS</span>
-              <h3>Automatic Street Light</h3>
-              <p><strong>Project:</strong> Use a light sensor to switch an LED on when the surroundings become dark.</p>
-              <p><strong>Real-world use:</strong> Demonstrates automatic lighting and energy-saving systems.</p>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <img class="project-photo" src="images/mechanics.jpeg" alt="Educational gears and pulley mechanism" loading="lazy">
-            <div class="project-caption">
-              <span class="project-category">04 / MECHANICS</span>
-              <h3>Gears and Pulley Machine</h3>
-              <p><strong>Project:</strong> Build a model to explore gears, pulleys, motion and force.</p>
-              <p><strong>Real-world use:</strong> Understand mechanisms found in cranes, elevators and machines.</p>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <img class="project-photo" src="images/imageai.png" alt="Artificial intelligence image recognition project" loading="lazy">
-            <div class="project-caption">
-              <span class="project-category">05 / ARTIFICIAL INTELLIGENCE</span>
-              <h3>AI Image Classifier</h3>
-              <p><strong>Project:</strong> Train a simple AI model to recognise selected images or objects.</p>
-              <p><strong>Real-world use:</strong> Introduces image recognition used in accessibility and visual inspection.</p>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <img class="project-photo" src="images/Visual.jpg" alt="Mobile application designed for students" loading="lazy">
-            <div class="project-caption">
-              <span class="project-category">06 / APP DEVELOPMENT</span>
-              <h3>Student Utility App</h3>
-              <p><strong>Project:</strong> Design an app for reminders, quizzes or classroom activities.</p>
-              <p><strong>Real-world use:</strong> Shows how apps can organise information and solve everyday problems.</p>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <img class="project-photo" src="images/Designthinking.jpg" alt="Student prototype made from reusable materials" loading="lazy">
-            <div class="project-caption">
-              <span class="project-category">07 / DESIGN THINKING</span>
-              <h3>Eco-Friendly Product Prototype</h3>
-              <p><strong>Project:</strong> Design a prototype that addresses a problem such as plastic waste.</p>
-              <p><strong>Real-world use:</strong> Develops creativity, prototyping and problem-solving skills.</p>
-            </div>
-          </article>
-
+      <!-- 2. Coding -->
+      <article class="project-card">
+        <img
+          class="project-photo"
+          src="images/maze1.jpg"
+          alt="Student-created coding game"
+          loading="lazy"
+        >
+        <div class="project-caption">
+          <span class="project-category">02 / CODING</span>
+          <h3>Interactive Maze Game</h3>
+          <p>
+            <strong>Project:</strong> Create a game using movement,
+            conditions, events and scoring.
+          </p>
+          <p>
+            <strong>Real-world use:</strong> Builds logical thinking
+            and introduces game development.
+          </p>
         </div>
+      </article>
 
-        <p class="project-note">
-          Every great invention begins with curiosity.
-        </p>
+      <!-- 3. Electronics -->
+      <article class="project-card">
+        <img
+          class="project-photo"
+          src="images/light.jpeg"
+          alt="Automatic light circuit with a light sensor"
+          loading="lazy"
+        >
+        <div class="project-caption">
+          <span class="project-category">03 / ELECTRONICS</span>
+          <h3>Automatic Street Light</h3>
+          <p>
+            <strong>Project:</strong> Use a light sensor to switch
+            an LED on when the surroundings become dark.
+          </p>
+          <p>
+            <strong>Real-world use:</strong> Demonstrates automatic
+            lighting and energy-saving systems.
+          </p>
+        </div>
+      </article>
 
-      </div>
-    </section>
+      <!-- 4. Mechanics -->
+      <article class="project-card">
+        <img
+          class="project-photo"
+          src="images/mechanics.jpeg"
+          alt="Educational gears and pulley mechanism"
+          loading="lazy"
+        >
+        <div class="project-caption">
+          <span class="project-category">04 / MECHANICS</span>
+          <h3>Gears and Pulley Machine</h3>
+          <p>
+            <strong>Project:</strong> Build a model to explore gears,
+            pulleys, motion and force.
+          </p>
+          <p>
+            <strong>Real-world use:</strong> Understand mechanisms
+            found in cranes, elevators and machines.
+          </p>
+        </div>
+      </article>
+
+      <!-- 5. Artificial Intelligence -->
+      <article class="project-card">
+        <img
+          class="project-photo"
+          src="images/imageai.png"
+          alt="Artificial intelligence image recognition project"
+          loading="lazy"
+        >
+        <div class="project-caption">
+          <span class="project-category">05 / ARTIFICIAL INTELLIGENCE</span>
+          <h3>AI Image Classifier</h3>
+          <p>
+            <strong>Project:</strong> Train a simple AI model to
+            recognise selected images or objects.
+          </p>
+          <p>
+            <strong>Real-world use:</strong> Introduces image
+            recognition used in accessibility and visual inspection.
+          </p>
+        </div>
+      </article>
+
+      <!-- 6. App Development -->
+      <article class="project-card">
+        <img
+          class="project-photo"
+          src="images/Visual.jpg"
+          alt="Mobile application designed for students"
+          loading="lazy"
+        >
+        <div class="project-caption">
+          <span class="project-category">06 / APP DEVELOPMENT</span>
+          <h3>Student Utility App</h3>
+          <p>
+            <strong>Project:</strong> Design an app for reminders,
+            quizzes or classroom activities.
+          </p>
+          <p>
+            <strong>Real-world use:</strong> Shows how apps can
+            organise information and solve everyday problems.
+          </p>
+        </div>
+      </article>
+
+      <!-- 7. Design Thinking -->
+      <article class="project-card">
+        <img
+          class="project-photo"
+          src="images/Designthinking.jpg"
+          alt="Student prototype made from reusable materials"
+          loading="lazy"
+        >
+        <div class="project-caption">
+          <span class="project-category">07 / DESIGN THINKING</span>
+          <h3>Eco-Friendly Product Prototype</h3>
+          <p>
+            <strong>Project:</strong> Design a prototype that
+            addresses a problem such as plastic waste.
+          </p>
+          <p>
+            <strong>Real-world use:</strong> Develops creativity,
+            prototyping and problem-solving skills.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="project-note">
+      Every great invention begins with curiosity.
+    </p>
+
+  </div>
+</section>
 
     <!-- School partnership -->
     <section class="school-cta">
       <div class="container school-cta-inner">
         <div>
           <span class="cta-eyebrow">FOR SCHOOLS &amp; LEARNING COMMUNITIES</span>
-          <h2>
-            Let's make learning<br>
+          <h2>Let's make learning<br>
             <span>come alive.</span>
           </h2>
           <p>
@@ -981,11 +578,9 @@
     <!-- Contact -->
     <section class="section contact-section" id="contact">
       <div class="container contact-grid">
-
         <div class="contact-copy">
           <div class="section-kicker">05 / SAY HELLO</div>
-          <h2>
-            Have a big idea?<br>
+          <h2>Have a big idea?<br>
             <span class="serif-accent">Let's talk.</span>
           </h2>
           <p class="section-description">
@@ -996,7 +591,7 @@
           <div class="contact-detail">
             <span class="contact-detail-icon">✉</span>
             <div>
-              <strong>Email: skillpulse0305@gmail.com</strong>
+              <strong>EMAIL : skillpulse0305@gmail.com</strong>
               <strong>Let's connect</strong>
               <span>Use the form to start a conversation.</span>
             </div>
@@ -1017,41 +612,38 @@
 
           <div class="form-row">
             <label for="name">Your name *</label>
-            <input id="name" name="name" type="text" autocomplete="name" placeholder="Enter your name" required>
+            <input id="name" name="name" type="text"
+              placeholder="Enter your name" required>
           </div>
 
           <div class="form-row">
             <label for="email">Email address *</label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <input id="email" name="email" type="email"
+              placeholder="you@example.com" required>
           </div>
 
           <div class="form-row">
-            <label for="phone">Contact number *</label>
-            <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="Enter your 10-digit mobile number" title="Enter a valid 10-digit Indian mobile number" required>
+            <label for="">contact number *</label>
+            <input id="phone" name="phone" type="tel"
+              placeholder="enter your contact number" required>
           </div>
 
           <div class="form-row">
             <label for="interest">I'm interested in</label>
-            <select id="interest" name="program" required>
+            <select id="interest" name="program">
               <option value="">Choose an option</option>
               <option value="Student programs">Student programs</option>
               <option value="School partnership">School partnership</option>
               <option value="Workshops">Workshops</option>
               <option value="Corporate / community collaboration">Corporate / community collaboration</option>
-              <option value="Coding">Coding</option>
-              <option value="STEM &amp; Design Thinking">STEM &amp; Design Thinking</option>
-              <option value="Mechanics">Mechanics</option>
-              <option value="Electronics">Electronics</option>
-              <option value="App Development">App Development</option>
-              <option value="Robotics">Robotics</option>
-              <option value="Artificial Intelligence">Artificial Intelligence</option>
               <option value="Other">Other</option>
             </select>
           </div>
 
           <div class="form-row">
             <label for="message">Tell us a little more *</label>
-            <textarea id="message" name="message" rows="4" placeholder="What would you like to explore?" required></textarea>
+            <textarea id="message" name="message" rows="4"
+              placeholder="What would you like to explore?" required></textarea>
           </div>
 
           <button class="button button-primary form-submit" type="submit">
@@ -1059,11 +651,10 @@
           </button>
 
           <p class="form-disclaimer">
-            Your enquiry will open in WhatsApp for you to review and send.
+            Your enquiry will be saved securely by the Skill Pulse website.
           </p>
           <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
-
       </div>
     </section>
 
@@ -1072,25 +663,21 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-main">
-
       <a class="brand" href="#home">
         <span class="brand-mark">ϟ</span>
         <span class="brand-name">
-          Skill <span>Pulse</span>
-          <small>HANDS-ON PRACTICE</small>
+          skill<span>pulse</span>
+          <small>HANDS ON PRACTICE</small>
         </span>
       </a>
 
-      <p>
-        Curiosity into capability.<br>
-        One hands-on experience at a time.
-      </p>
+      <p>Curiosity into capability.<br>
+        One hands-on experience at a time.</p>
 
       <div class="footer-links">
         <a href="#about">About</a>
         <a href="#programs">Programs</a>
         <a href="#approach">Our Approach</a>
-        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
 
@@ -1104,48 +691,5 @@
   </footer>
 
   <script src="script.js"></script>
-
-  <!-- Mobile navigation functionality -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuToggle = document.getElementById("menuToggle");
-      const navLinks = document.getElementById("navLinks");
-
-      if (!menuToggle || !navLinks) return;
-
-      menuToggle.addEventListener("click", function () {
-        const isOpen = navLinks.classList.toggle("active");
-
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-        menuToggle.setAttribute(
-          "aria-label",
-          isOpen ? "Close navigation menu" : "Open navigation menu"
-        );
-        menuToggle.textContent = isOpen ? "✕" : "☰";
-      });
-
-      navLinks.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-          navLinks.classList.remove("active");
-          menuToggle.setAttribute("aria-expanded", "false");
-          menuToggle.setAttribute("aria-label", "Open navigation menu");
-          menuToggle.textContent = "☰";
-        });
-      });
-
-      document.addEventListener("click", function (event) {
-        if (
-          !navLinks.contains(event.target) &&
-          !menuToggle.contains(event.target)
-        ) {
-          navLinks.classList.remove("active");
-          menuToggle.setAttribute("aria-expanded", "false");
-          menuToggle.setAttribute("aria-label", "Open navigation menu");
-          menuToggle.textContent = "☰";
-        }
-      });
-    });
-  </script>
-
 </body>
 </html>
