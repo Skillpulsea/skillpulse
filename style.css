@@ -1778,7 +1778,7 @@ button:focus-visible {
   .brand-mark,
   .brand-text,
   .brand-tagline {
-    max-width: 100%;
+    max-width: 90%;
     box-sizing: border-box;
   }
 
@@ -1794,7 +1794,7 @@ button:focus-visible {
 
   .brand img,
   .brand-logo {
-    max-width: 85%;
+    max-width: 65%;
     height: auto;
     object-fit: contain;
   }
